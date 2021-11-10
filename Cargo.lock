@@ -32,14 +32,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fbe5e23404da5b4f555ef85ebed98fb4083e55a00c317800bc2a50ede9f3d219"
 
 [[package]]
-name = "pogdfkj"
-version = "0.1.0"
-dependencies = [
- "hound",
- "rand",
-]
-
-[[package]]
 name = "ppv-lite86"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -83,6 +75,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d51e9f596de227fda2ea6c84607f5558e196eeaf43c986b724ba4fb8fdf497e7"
 dependencies = [
  "rand_core",
+]
+
+[[package]]
+name = "rust_synth"
+version = "0.1.0"
+dependencies = [
+ "hound",
+ "rand",
 ]
 
 [[package]]
