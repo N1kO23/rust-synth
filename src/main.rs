@@ -1,18 +1,22 @@
+use chrono;
 use hound::{WavSpec, WavWriter};
 use std::fs::File;
 use std::path::Path;
 mod helpers;
 mod waves;
 fn main() {
-    let chord = vec![
-        helpers::unison(16, 5.0, waves::sawtooth_wave, 25.96, 0.0, 44100.0),
-        helpers::unison(16, 5.0, waves::sawtooth_wave, 51.91, 0.0, 44100.0),
-        helpers::unison(16, 5.0, waves::sawtooth_wave, 103.83, 0.0, 44100.0),
-        helpers::unison(16, 5.0, waves::sawtooth_wave, 130.81, 0.0, 44100.0),
-        helpers::unison(16, 5.0, waves::sawtooth_wave, 155.56, 0.0, 44100.0),
-        helpers::unison(16, 5.0, waves::sawtooth_wave, 174.61, 0.0, 44100.0),
-        helpers::unison(16, 5.0, waves::sawtooth_wave, 196.00, 0.0, 44100.0),
-    ];
+    // sawtooth_wave
+    // sine_wave
+    // triangle_wave
+    // square_wave
+    let chord = vec![helpers::unison(
+        16,
+        5.0,
+        waves::square_wave,
+        30.00,
+        0.0,
+        44100.0,
+    )];
 
     let mut waves = vec![];
 
@@ -24,7 +28,10 @@ fn main() {
 
     //waves.push(white_noise(0.25, 44100.0));
     let combined = helpers::mix_waves(&waves);
-    make_wav(&combined, "chord.wav");
+    make_wav(
+        &combined,
+        &format!("chord_{:?}.wav", chrono::offset::Local::now().timestamp()),
+    );
 }
 
 // Make a function that turns a vec<f32> into audio file

@@ -11,8 +11,9 @@ pub fn unison(
   let mut unison_waves = vec![];
   for _ in 0..voices {
     unison_waves.push(wave_function(
+      1.0 / voices as f32,
       frequency + (rand::random::<f32>() - 0.5) * detune_amount,
-      phase + ((rand::random::<f32>() - 0.5) * 2.0),
+      phase + (rand::random::<f32>()),
       sample_rate,
     ));
   }
