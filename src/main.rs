@@ -9,14 +9,15 @@ fn main() {
     // sine_wave
     // triangle_wave
     // square_wave
-    let chord = vec![helpers::unison(
-        16,
-        5.0,
-        waves::square_wave,
-        30.00,
-        0.0,
-        44100.0,
-    )];
+    let chord = vec![
+        helpers::unison(16, 5.0, waves::square_wave, 25.96, 0.0, 44100.0),
+        helpers::unison(16, 5.0, waves::square_wave, 51.91, 0.0, 44100.0),
+        helpers::unison(16, 5.0, waves::square_wave, 103.83, 0.0, 44100.0),
+        helpers::unison(16, 5.0, waves::square_wave, 130.81, 0.0, 44100.0),
+        helpers::unison(16, 5.0, waves::square_wave, 155.56, 0.0, 44100.0),
+        helpers::unison(16, 5.0, waves::square_wave, 174.61, 0.0, 44100.0),
+        helpers::unison(16, 5.0, waves::square_wave, 196.00, 0.0, 44100.0),
+    ];
 
     let mut waves = vec![];
 
